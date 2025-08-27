@@ -1,0 +1,168 @@
+
+  @import url("https://use.typekit.net/jmk3xov.css");
+
+/* Root Variables */
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.95);
+  --primary-text: #ffffff;
+  --highlight-text: #ffdd57;
+  --accent-bg: rgba(255, 255, 255, 0.1);
+  --spacing: 300px;
+  --font-heading: elevon, sans-serif;
+  --font-body: brandon-grotesque, sans-serif;
+
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Canvas Background */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Page Layout */
+main {
+  width: 100vw;
+  color: var(--primary-text);
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 5%;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
+}
+
+/* Typography */
+h1, h2, h3, blockquote {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--highlight-text);
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 6;
+  font-size: 2.5rem;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: var(--spacing);
+}
+
+/* Sections */
+section {
+  grid-column: 2 / 8;
+  padding: 2rem;
+  background: var(--accent-bg);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Blockquote */
+blockquote {
+  grid-column: 2 / span 9;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.1); /* Soft translucent background */
+  border-left: 5px solid #ff6347; /* Stylish left border */
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Blockquote text */
+blockquote p {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  color: #f1f1f1;
+}
+
+
+/* Left-Aligned Sections */
+.left {
+  grid-column: 6 / 12;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  header {
+    grid-column: 1 / span 6;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  section {
+    grid-column: 1 / span 6;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    grid-column: 1 / span 6;
+  }
+
+  .left {
+    grid-column: 1 / span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    display: block;
+    padding: 80px 20px;
+  }
+
+  header, section, blockquote {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
